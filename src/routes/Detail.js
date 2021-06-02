@@ -10,10 +10,12 @@ function Detail({toDo}) {
   );
 }
 
+// can use ownProps rather than useParams
 function mapStateToProps(state, ownProps) {
   const {match: {params: {id}}} = ownProps; 
 
-  return {toDo: state.find(toDo => toDo.id == parseInt(id))}
+  return {toDo: state.find(toDo => toDo.id == parseInt(id))}  
+  // find() returns 1st item which saticifies test.
 }
 
 export default connect(mapStateToProps)(Detail);

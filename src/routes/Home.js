@@ -28,14 +28,17 @@ function Home({toDos, addToDo}) {
   );
 };
 
+// get something from Redux Store, then put to Component's Props
 function mapStateToProps(state) {
-  return {toDos: state};
+  return {toDos: state};  // put to component's prop
 }
 
+// dispatch actions to the store.
 function mapDispatchToProps(dispatch) {
   return {
     addToDo: text => dispatch(add(text))
   };
 }
 
+// connect store and Home component
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -14,6 +14,7 @@ function ToDo({text, onDelClick, id}) {
   );
 }
 
+// dispatch actions to the store.
 function mapDispatchToProps(dispatch, ownProps) {
   return {
     onDelClick: () => dispatch(remove(ownProps.id))
